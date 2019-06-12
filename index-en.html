@@ -19,7 +19,7 @@ gtag('config', 'UA-82689420-5');
     document.getElementById("news").appendChild(brNode);
   }
 })
-</script><div class="text-center"><h2>最新消息 <a href="https://www.collaction.hk/s/extradition/objective" target="blank"> Powered by Collaction</a></h2></div><div id="news"></div></div></div><div class="section section-petition bg-danger text-light"><div class="inner text-center"><script>fetch('https://sign-counter-prod-antiextradition-y3b3kusenf.web.kintohub.com/list?checked=true')
+</script><div class="text-center"><h2>Latest News <a href="https://www.collaction.hk/s/extradition/objective" target="blank"> Powered by Collaction</a></h2></div><div id="news"></div></div></div><div class="section section-petition bg-danger text-light"><div class="inner text-center"><script>fetch('https://sign-counter-prod-antiextradition-y3b3kusenf.web.kintohub.com/list?checked=true')
 .then(response => response.json())
 .then(signStat => {
   document.getElementById("signed_count").innerHTML = signStat.meta.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
