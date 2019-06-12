@@ -83,6 +83,7 @@ h2 {
 }
 .section-news a {
   color: #9be;
+	word-break: break-all;
 }
 .section-features {
   padding-top: 90px;
