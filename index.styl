@@ -85,10 +85,13 @@ h2
 .section-news
   .post
     display: flex
-    flex-flow(row wrap)
+    flex-wrap(wrap)
+    flex-direction(row)
     margin-bottom: 40px
     .post-title
       flex(1 1 auto)
+    .post-content
+      display: flex
     p
       flex(0 1 auto)
       margin: 0 16px
