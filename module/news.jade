@@ -10,7 +10,7 @@
         var post = r.data[i];
         var postNode = document.createElement("div");
         postNode.className = "post";
-        postNode.innerHTML = "<h3>" + post.title + " - " + post.datetime + "</h3><br/>" + post.content;
+        postNode.innerHTML = "<h3 class=\"post-title\">" + post.title + "</h3><p class=\"post-time\">" + post.datetime + "</p><br/><div class=\"post-content\">" + post.content + "</div>";
         document.getElementById("news").appendChild(postNode);
         var lineNode = document.createElement("div");
         lineNode.className = "lineSeparator";
