@@ -10,7 +10,14 @@
         var post = r.data[i];
         var postNode = document.createElement("div");
         postNode.className = "post";
-        postNode.innerHTML = "<h3 class=\"post-title\">" + post.title + "</h3><p class=\"post-time\">" + post.datetime + "</p><br/><div class=\"post-content\">" + post.content + "</div>";
+        var postContent = '';
+        var parseBtnOnly = new DOMParser().parseFromString(post.content, "text/xml");
+        var btnArray = parseBtnOnly.getElementsByTagName("a");
+        for (var j=0; j<btnArray.length; j++) {
+            btnArray[j].classList.add("fa-icon");
+            postContent += btnArray[j].outerHTML;
+        }
+        postNode.innerHTML = "<h3 class=\"post-title\">" + post.title + "</h3><p class=\"post-time fa-icon\">" + post.datetime + "</p><br/><div class=\"post-content\">" + postContent + "</div>";
         document.getElementById("news").appendChild(postNode);
         var lineNode = document.createElement("div");
         lineNode.className = "lineSeparator";

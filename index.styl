@@ -35,10 +35,23 @@ nav
 
 .section-telegram
   a.link
+    margin: 8px
     &:before
       content: "\f0e6"
-      font-family: "fontawesome"
-      margin-right: 8px
+
+.section-video
+  ul
+    list-style: none
+    padding-left: 0
+    li
+      a
+        &:before
+          content: "\f03d"
+
+.fa-icon
+  &:before
+    font-family: "fontawesome"
+    margin-right: 8px
 
 .section
   padding: 80px 20px
@@ -92,29 +105,23 @@ h2
       flex(1 1 auto)
     .post-content
       display: flex
-    p
-      flex(0 1 auto)
-      margin: 0 16px
-      &.post-time
-        flex(1 1 100%)
-        margin:0 0 24px
+      flex-direction(row)
+      flex-wrap(wrap)
+      margin: 0 -8px
+      a
+        flex(0 1 auto)
+        padding: 8px 16px
+        margin: 8px
+        border-radius: 8px
+        background: #9be
+        color: white
         &:before
-          content: "\f017"
-          font-family: "fontawesome"
-          margin-right: 8px
-    a
-      padding: 8px 16px
-      border-radius: 8px
-      background: #9be
-      color: white
+          content: "\f0c1"
+    .post-time
+      flex(1 1 100%)
+      margin:0 0 24px
       &:before
-        content: "\f0c1"
-        font-family: "fontawesome"
-        margin-right: 8px
-      + br
-        display: none
-        + a
-          margin-left: 32px
+        content: "\f017"
   .lineSeparator
     border-bottom: 1px solid rgba(255,255,255,0.3)
   a
