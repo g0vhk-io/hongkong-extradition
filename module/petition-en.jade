@@ -1,0 +1,17 @@
+//- module
+.section.section-petition.bg-danger.text-light: .inner.text-center
+  script.
+    fetch('https://sign-counter-prod-antiextradition-y3b3kusenf.web.kintohub.com/list?checked=true')
+    .then(response => response.json())
+    .then(signStat => {
+      document.getElementById("signed_count").innerHTML = signStat.meta.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      document.getElementById("org_count").innerHTML = signStat.meta.org_count
+      document.getElementById("updated_at").innerHTML = signStat.meta.updated_at
+    })
+  .h1 Petition
+  .row
+    .col-12.col-md-6 #[.huge#signed_count ] Individuals
+    .col-12.col-md-6 #[.huge#org_count ] Organizations
+  .sep(style="border-bottom:1px solid rgba(255,255,255,0.6);margin:40px auto;width:150px")
+  p Last update
+    span#updated_at
