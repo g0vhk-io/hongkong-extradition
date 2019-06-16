@@ -28,12 +28,56 @@ nav
   background: url(img/jumbotron.jpg) center center no-repeat #222
   background-size: cover
   border-radius: 0
-  .text-center
-    position: absolute
-    width: 100%
-    top: 50%
-    margin: auto
-    transform: translate(0, -50%)
+
+  .btn-scroll-down-wrapper
+    left: 0
+    right: 0
+    bottom: 15px
+
+    .btn-scroll-down
+      width: 28px
+      height: 56px
+
+      .chevron
+        position absolute
+        width 28px
+        height 8px
+        opacity 0
+        transform scale3d(0.5, 0.5, 0.5)
+        animation move 3s ease-out infinite
+        &:first-child
+          animation move 3s ease-out 1s infinite
+        &:nth-child(2)
+          animation move 3s ease-out 2s infinite
+        &:before
+          left 0
+          transform skew(0deg, 30deg)
+        &:after
+          right 0
+          width 50%
+          transform skew(0deg, -30deg)
+
+      .chevron:before,
+      .chevron:after
+        content ' '
+        position absolute
+        top 0
+        height 100%
+        width 51%
+        background #fff
+
+      @keyframes move
+          25%
+            opacity 1
+          33%
+            opacity 1
+            transform translateY(30px)
+          67%
+            opacity 1
+            transform translateY(40px)
+          100%
+            opacity 0
+            transform translateY(55px) scale3d(0.5, 0.5, 0.5)
 
 .section-telegram
   a.link
