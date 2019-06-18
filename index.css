@@ -25,10 +25,10 @@ nav {
   font-size: 0.9em;
 }
 .jumbotron {
-  height: 100%;
-  max-height: 640px;
+  min-height: 640px;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 95px;
   margin-bottom: 0;
   position: relative;
   background: url("img/jumbotron.jpg") center center no-repeat #222;
