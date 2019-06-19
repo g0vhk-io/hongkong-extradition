@@ -51,14 +51,7 @@ html(lang="zh-Hant")
       gtag('config', 'UA-82689420-5');
 
   body
-    #fb-root.text-center
-    script(
-      async,
-      defer,
-      crossorigin="anonymous",
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"
-    )
-
+    include module/fb_like_btn.jade
     include module/jumbotron.jade
     include module/arrest.jade
     include module/telegram.jade
