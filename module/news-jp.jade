@@ -2,8 +2,8 @@
 //- #[a(href="/full_timeline.html",target="blank") (按此打開完整時間表 )]
 .section.section-news.bg-dark.text-light: .inner
   script.
-    fetch('https://www.collaction.hk/api/extradition_objective?token=mzFly3aDBwWQpnJaHol60A2I9lYccTLy92lyN3QorQbfgLkO5ifxauPOuBF1')
-    //fetch('https://assets.collaction.hk/extradition_objective_list.json')
+    //- fetch('https://www.collaction.hk/api/extradition_objective?token=mzFly3aDBwWQpnJaHol60A2I9lYccTLy92lyN3QorQbfgLkO5ifxauPOuBF1')
+    fetch('https://assets.collaction.hk/extradition_objective_list_en.json')
     .then(response => response.json())
     .then(r => {
       for (var i=0; i<=10; i++) {
@@ -14,19 +14,25 @@
         var parseBtnOnly = new DOMParser().parseFromString(post.content, "text/xml");
         var btnArray = parseBtnOnly.getElementsByTagName("a");
         for (var j=0; j<btnArray.length; j++) {
-            btnArray[j].classList.add("fa-icon");
-            postContent += btnArray[j].outerHTML;
+          btnArray[j].classList.add("fa-icon");
+          btnArray[j].classList.add("badge");
+          postContent += btnArray[j].outerHTML;
         }
-        postNode.innerHTML = "<h3 class=\"post-title\">" + post.title + "</h3><p class=\"post-time fa-icon\">" + post.datetime + "</p><br/><div class=\"post-content\">" + postContent + "</div>";
-        document.getElementById("news").appendChild(postNode);
+        postNode.innerHTML = "<a class=\"h3 text-white post-title\" href=\"" + post.url + "\">" + post.title + "</a><p class=\"post-time fa-icon mb-1\">" + post.datetime + "</p><br/><div class=\"post-content\">" + postContent + "</div>";
+        document.getElementById("articles").appendChild(postNode);
         var lineNode = document.createElement("div");
         lineNode.className = "lineSeparator";
-        document.getElementById("news").appendChild(lineNode);
+        document.getElementById("articles").appendChild(lineNode);
         var brNode = document.createElement("br");
-        document.getElementById("news").appendChild(brNode);
+        document.getElementById("articles").appendChild(brNode);
       }
     })
 
-  .text-center: h2 最新情報 #[a(href="https://www.collaction.hk/s/extradition/objective",target="blank")  Powered by Collaction]
-  #news
+  h1.text-center.mb-0
+    | 最新情報
+  p.lead.text-center
+    a(href='https://www.collaction.hk/s/extradition/objective', target='blank')
+      small Powered by Collaction
+
+  #articles.py-3
 
