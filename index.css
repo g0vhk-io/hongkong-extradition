@@ -278,6 +278,9 @@ h2 {
 .section-photos .photo:hover .mask {
   opacity: 0;
 }
+.section-news {
+  overflow-y: hidden;
+}
 .section-news .post {
   display: flex;
   -webkit-flex-wrap: wrap;
